@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app1/app_theme.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -41,12 +42,13 @@ class _SebhaTabState extends State<SebhaTab> {
           Text(
             'عدد التسبيحات',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              decoration: TextDecoration.none,
-            ),
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(
+                  fontWeight: FontWeight.w600
+              )
           ),
           SizedBox(height: 20),
           Container(
@@ -57,15 +59,18 @@ class _SebhaTabState extends State<SebhaTab> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
-                backgroundColor: Color(0xffB7935F),
+                backgroundColor: AppTheme.lightPrimary,
               ),
               onPressed: _onTasbeehPressed,
               child: Text(
                 '$num',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                ),
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(
+                      fontWeight: FontWeight.w600
+                  )
               ),
             ),
           ),
@@ -78,16 +83,18 @@ class _SebhaTabState extends State<SebhaTab> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
-                backgroundColor: Color(0xffB7935F),
+                backgroundColor: AppTheme.lightPrimary,
               ),
               onPressed: _onTasbeehPressed,
               child: Text(
                 '$text',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  decoration: TextDecoration.none,
-                ),
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(
+                      fontWeight: FontWeight.normal, color: AppTheme.white
+                  )
               ),
             ),
           ),

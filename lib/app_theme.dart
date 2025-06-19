@@ -14,6 +14,26 @@ class AppTheme {
       unselectedItemColor: white,
       backgroundColor: lightPrimary,
     ),
-  );
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        titleTextStyle:
+        TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 30,
+          color: black,
+        ),
+      ),
+      textTheme: TextTheme(
+        headlineSmall: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.w400,
+          color: black,),
+        titleLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: black),
+
+      ));
   static ThemeData darkTheme = ThemeData();
 }

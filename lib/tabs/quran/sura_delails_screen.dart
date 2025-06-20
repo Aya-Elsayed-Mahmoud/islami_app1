@@ -18,9 +18,13 @@ class _SuraDelailsScreenState extends State<SuraDelailsScreen> {
   Widget build(BuildContext context) {
     SuraDetailsArgs args =
         ModalRoute.of(context)!.settings.arguments as SuraDetailsArgs;
+
     if (ayat.isEmpty) {
       loadSuraFile(args.index);
     }
+=======
+    loadSuraFile(args.index);
+
 
     return Container(
       decoration: BoxDecoration(
@@ -58,16 +62,23 @@ class _SuraDelailsScreenState extends State<SuraDelailsScreen> {
                   )
                   : ListView.builder(
                     itemBuilder:
+
                 (_, index) => Text(
+=======
+                        (_, index) => Text(
+
                           ayat[index],
                           style: Theme.of(context).textTheme.titleLarge,
                           textAlign: TextAlign.center,
                         ),
                     itemCount: ayat.length,
           ),
+=======
+                  ),
         ),
       ),
     );
+    
   }
 
   Future<void> loadSuraFile(int index) async {

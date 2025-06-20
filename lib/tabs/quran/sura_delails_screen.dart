@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app1/tabs/quran/quran_tab.dart';
+import 'package:islami_app1/tabs/seetings/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../app_theme.dart';
 
@@ -25,18 +27,15 @@ class _SuraDelailsScreenState extends State<SuraDelailsScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/background.png'),
+          image: AssetImage(Provider
+              .of<SettingsProvider>(context)
+              .backgroundImagePath),
         ),
       ),
       child: Scaffold(
         appBar: AppBar(
           title: Text(
             args.suraName,
-            style: TextStyle(
-              color: AppTheme.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent,
@@ -49,7 +48,9 @@ class _SuraDelailsScreenState extends State<SuraDelailsScreen> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: AppTheme.white,
+            color: Provider
+                .of<SettingsProvider>(context)
+                .isDark ? AppTheme.darkPrimary : AppTheme.white,
           ),
           child:
               ayat.isEmpty

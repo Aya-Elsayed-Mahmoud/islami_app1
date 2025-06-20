@@ -36,11 +36,6 @@ class _SuraDelailsScreenState extends State<SuraDelailsScreen> {
         appBar: AppBar(
           title: Text(
             args.suraName,
-            style: TextStyle(
-              color: AppTheme.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent,

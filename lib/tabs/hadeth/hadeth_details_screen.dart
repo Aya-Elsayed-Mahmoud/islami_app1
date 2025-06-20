@@ -24,14 +24,7 @@ class HadethDetailsScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             hadeth.title,
-            style: TextStyle(
-              color: AppTheme.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
         ),
         body: Container(
           padding: EdgeInsets.all(24),

@@ -16,7 +16,7 @@ class AppTheme {
     ),
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
-        foregroundColor: dark,
+        foregroundColor: black,
 
         centerTitle: true,
         titleTextStyle:
@@ -74,5 +74,6 @@ class AppTheme {
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStatePropertyAll(AppTheme.white),
     ),
+
   );
 }

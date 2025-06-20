@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app1/app_theme.dart';
 import 'package:islami_app1/tabs/seetings/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
@@ -17,7 +18,7 @@ class SettingsTab extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Dark Mode',
+              Text(AppLocalizations.of(context)!.darkMode,
                 style: Theme
                     .of(context)
                     .textTheme
@@ -43,7 +44,7 @@ class SettingsTab extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Language', style: Theme
+              Text(AppLocalizations.of(context)!.language, style: Theme
                   .of(context)
                   .textTheme
                   .headlineSmall
@@ -56,10 +57,16 @@ class SettingsTab extends StatelessWidget {
                   items: [
                     DropdownMenuItem(
                       value: 'en'
-                      , child: Text('English'),),
+                      , child: Text('English', style: Theme
+                        .of(context)
+                        .textTheme
+                        .titleLarge,),),
                     DropdownMenuItem(
                         value: 'ar',
-                        child: Text('العربيه')),
+                        child: Text('العربيه', style: Theme
+                            .of(context)
+                            .textTheme
+                            .titleLarge,)),
 
                   ],
                   onChanged: (selectedLanguage) {

@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app1/tabs/hadeth/hadeth_tab.dart';
+import 'package:islami_app1/tabs/hadeth/hadeth.dart';
 
 import '../../app_theme.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName = '/hadeth_details';
-  List<String> ayat = [
-    "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
-    "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِين",
-    "الرَّحْمَنِ الرَّحِيم",
-  ];
+  List<String> hadeth = [];
 
   @override
   Widget build(BuildContext context) {
-    HadethDetailsArgs args =
-        ModalRoute.of(context)!.settings.arguments as HadethDetailsArgs;
+    Hadeth hadeth = ModalRoute.of(context)!.settings.arguments as Hadeth;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -24,7 +19,7 @@ class HadethDetailsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            args.hadethName,
+            hadeth.title,
             style: TextStyle(
               color: AppTheme.black,
               fontWeight: FontWeight.bold,
@@ -47,11 +42,11 @@ class HadethDetailsScreen extends StatelessWidget {
           child: ListView.builder(
             itemBuilder:
                 (_, index) => Text(
-                  ayat[index],
+                  hadeth.content[index],
                   style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
-            itemCount: ayat.length,
+            itemCount: hadeth.content.length,
           ),
         ),
       ),

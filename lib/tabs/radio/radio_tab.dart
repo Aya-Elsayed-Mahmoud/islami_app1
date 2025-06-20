@@ -3,6 +3,31 @@ import 'package:flutter/material.dart';
 class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.red);
+    return
+      Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/radio.png'),
+
+            SizedBox(height: 30),
+            Text(
+                'إذاعة القرآن الكريم ',
+                textAlign: TextAlign.center,
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(
+                    fontWeight: FontWeight.w600
+                )
+            ),
+            SizedBox(height: 50),
+            Image.asset('assets/images/icon_radio.png'),
+
+          ],
+        ),
+      );
   }
 }
